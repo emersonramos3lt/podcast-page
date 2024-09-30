@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    transition: color .2s;
+}
+
+/* GRID */
+.grid {
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* HEADER */
+header .logo {
+    font-size: 1.5rem;
+    position: fixed;
+    margin-top: 3.5rem;
+    color: #111;
+    text-decoration: none;
+}
+
+header .logo:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* CATEGORIES */
+.container-categories {
+    margin-top: 3.5rem;
+    position: fixed;
+    left: 80%;
+}
+
+.container-categories div {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.container-categories ul {
+    list-style-type: none;
+    margin-bottom: 2.5rem;
+}
+
+.container-categories li {
+    margin-bottom: .4rem;
+}
+
+.container-categories ul li a {
+    color: #111;
+    font-size: 1.8rem;
+}
+
+.container-categories ul li a:hover {
+    color: blue;
+}
+
+/* EPISODES */
+.container-episodes {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 7rem;
+}
+
+.container-episodes img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.episode {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 5rem;
+    gap: 1rem;
+}
+
+.episode {
+    font-size: 1.8rem;
+}
+
+.episode a {
+    text-decoration: none;
+    color: #111;
+}
+
+.episode a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* CURSOR */
+#cursor {
+    position: absolute;
+    background-color: blue;
+    opacity: 1;
+    height: 27px;
+    width: 27px;
+    top: 50%;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1;
+    pointer-events: none;
+}
+
+#cursor.active {
+    animation: click .5s ease;
+}
+
+@keyframes click {
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ORDER */
+header {order: 1;}
+.container-episodes{order: 2;}
+.container-categories{order: 3;}
+footer{order: 4;}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.8rem;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 370px;
+    }
+
+    /* ORDER */
+    header {
+        margin-top: 1rem;
+    }
+
+    header .logo {
+        font-size: 1.5rem;
+        position: relative;
+    }
+
+    .container-categories {
+        margin-top: 2rem;
+        position: relative;
+        left: 0;
+    }
+    
+    .container-categories div {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .container-categories ul {
+        list-style-type: none;
+        margin-bottom: 2.5rem;
+    }
+    
+    .container-categories li {
+        margin-bottom: .5rem;
+    }
+    
+    .container-categories ul li a {
+        font-size: 1.3rem;
+    }
+
+    footer p {
+        padding-bottom: 2rem;
+    }
+
+    .container-episodes {
+        max-width: 340px;
+        padding-top: 3.7rem;
+    }
+    
+    .episode {
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+    }
+    
+    .episode {
+        font-size: 1.5rem;
+    }
+
+    #cursor {
+        opacity: 0;
+    }
+
+    #cursor.active {
+        animation: none;
+    }
+}
