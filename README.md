@@ -21,4 +21,4 @@ while also incorporating external links to platforms like Spotify and YouTube.
 
 # Screenshot
 
-![Screenshot](./screenshot/img1.PNG)
+![Screenshot](./screenshot/img1.png)
